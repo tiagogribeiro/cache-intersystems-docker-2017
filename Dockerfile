@@ -19,7 +19,7 @@ RUN tar -xzf ${TMP_FILE_INSTALL}
 
 RUN ./${TMP_DIRECTORY}/cinstall_silent && rm -rf ${TMP_INSTALL_DIR}
     
-RUN ccontrol stop $ISC_PACKAGE_INSTANCENAME quietly
+RUN ccontrol stop ${ISC_PACKAGE_INSTANCENAME} quietly
 
 WORKDIR /
 ADD ccontainermain .
