@@ -12,7 +12,7 @@ ENV ISC_PACKAGE_INSTANCENAME="CACHE" \
     ISC_PACKAGE_UNICODE="Y"
 
 RUN mkdir ${TMP_INSTALL_DIR} 
-WORKDIR ${TMP_INSTALL_DIR}
+WORKDIR ${TMP_INSTALL_DIR}cases when you do 
 
 RUN wget -c --progress=bar http://download2.intersystems.com/webcinst/201711/f65c/LINUX/${TMP_FILE_INSTALL} 
 RUN tar -xzf ${TMP_FILE_INSTALL}
@@ -27,4 +27,4 @@ WORKDIR /
 ADD ccontainermain .
 RUN chmod +x ccontainermain
 
-ENTRYPOINT ["/ccontainermain"]
+ENTRYPOINT ["/ccontainermain","-cconsole","-i","CACHE"]
